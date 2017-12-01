@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visualization of Factorio Crafting Recipes</title>
+<style>
+    svg {
+        margin: 10px;
+    }
+
+    .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+    }
+
+    .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+    }
+
+    .link {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .2;
+    }
+
+    .link:hover {
+        stroke-opacity: .5;
+    }
+
+
+    .item {
+        float: left;
+        font-size: 16px;
+        margin: 3px;
+        padding: 3px;
+        border-radius: 6px;
+        height: 20px;
+        background: antiquewhite;
+    }
+</style>
+
+<body>
+    <div id="chart"></div>
+    <div id="items"></div>
+    <script src="d3.v3.min.js"></script>
+    <script src="sankey.js"></script>
+    <script src="data.js"></script>
+    <script src="craft.js"></script>
+</body>
