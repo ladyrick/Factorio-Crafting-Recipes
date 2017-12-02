@@ -146,7 +146,7 @@ factorio.rowData.trim().split(/\n+/).forEach(function (line) {
         for (var i = 3; i < info.length;) {
             craft.push({
                 name: info[i],
-                count: parseInt(info[i + 1]) / parseInt(info[1])
+                num: parseInt(info[i + 1]) / parseInt(info[1])
             });
             i += 2;
         }
@@ -155,7 +155,7 @@ factorio.rowData.trim().split(/\n+/).forEach(function (line) {
     factorio.craftItems.push({
         name: info[0],
         group: parseInt(info[1]),
-        time: parseFloat(info[2]),
+        time: parseFloat(info[2]) / parseInt(info[1]),
         craft: craft
     });
 });

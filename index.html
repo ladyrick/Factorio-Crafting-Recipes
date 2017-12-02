@@ -27,9 +27,7 @@
         stroke-opacity: .5;
     }
 
-
     .item {
-        float: left;
         font-size: 16px;
         line-height: 1;
         margin: 3px;
@@ -42,10 +40,33 @@
     .item:hover {
         background: rgb(255, 215, 162)
     }
+
+    #items .item {
+        float: left;
+    }
+
+    #goal {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    #goal .item {
+        display: inline-block;
+    }
+
+    #goal input {
+        width: 30px;
+    }
 </style>
 
 <body>
     <div id="chart"></div>
+    <div id="goal">
+        目标：每秒钟合成
+        <div id="num" class="item"></div> 个
+        <div id="name" class="item"></div>. 修改数量：
+        <input type="text" />
+    </div>
     <div id="items"></div>
     <script src="d3.v3.min.js"></script>
     <script src="sankey.js"></script>
