@@ -83,10 +83,6 @@ factorio.display = function (itemToCraft = "科技包3", numPerSecond = 1) {
                 nodes[itemToCraft] = { name: itemToCraft, num: 0, neededNum: 0 };
                 nodes[itemToCraft].neededTool = "组装机2型";
                 nodes[itemToCraft].speed = 3 / 4;
-                if (["铁板", "铜板", "石砖", "钢材"].indexOf(itemToCraft) !== -1) {
-                    nodes[itemToCraft].neededTool = "电炉";
-                    nodes[itemToCraft].speed = 2;
-                }
             }
 
             var item = factorio.craftItemsAsObject[itemToCraft];
