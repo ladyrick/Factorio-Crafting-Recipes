@@ -47,7 +47,11 @@ factorio.display = function (itemToCraft = "科技包1") {
 
         function searchMaterials(itemToCraft, count = 1) {
             // make sure nodes are unique
-            nodes[itemToCraft] = { name: itemToCraft };
+            if (itemToCraft in nodes) {
+                nodes[itemToCraft].count += count;
+            } else {
+                nodes[itemToCraft] = { name: itemToCraft, count: count };
+            }
             var item = factorio.craftItemsAsObject[itemToCraft];
 
             if (item.craft.length === 0) {
