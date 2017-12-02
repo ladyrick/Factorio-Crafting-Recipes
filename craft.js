@@ -1,12 +1,16 @@
 "use strict";
 var width = 1500;
 var height = 600;
+var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+
 factorio.initialize = function () {
     // append the svg canvas to the page
     factorio.svg = d3.select("#chart")
         .append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.select("#items").selectAll(".item")
         .data(factorio.craftItems.filter(d => d.craft.length !== 0))
